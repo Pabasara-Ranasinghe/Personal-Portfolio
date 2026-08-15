@@ -1,0 +1,500 @@
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+  min-height: 100vh;
+  padding: 140px 40px 80px;
+
+  display: flex;
+  align-items: center;
+
+  background-color: var(--background);
+
+  transition: background-color 0.3s ease;
+}
+
+/* =========================
+   HERO CONTAINER
+========================= */
+
+.hero-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 80px;
+}
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.hero-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.hero-greeting {
+  margin-bottom: 12px;
+
+  color: var(--accent);
+
+  font-size: 18px;
+  font-weight: 600;
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero h1 {
+  margin-bottom: 12px;
+
+  color: var(--text-primary);
+
+  font-size: 64px;
+  font-weight: 700;
+
+  line-height: 1.1;
+}
+
+.hero h2 {
+  margin-bottom: 22px;
+
+  color: var(--text-primary);
+
+  font-size: 28px;
+  font-weight: 600;
+
+  line-height: 1.3;
+}
+
+.hero-description {
+  max-width: 560px;
+
+  color: var(--text-secondary);
+
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* =========================
+   HERO BUTTONS
+========================= */
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+
+  margin-top: 32px;
+}
+
+/* =========================
+   HERO VISUAL
+========================= */
+
+.hero-visual {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================
+   HERO CARD
+========================= */
+
+.hero-card {
+  position: relative;
+
+  width: 360px;
+  height: 430px;
+
+  background-color: var(--surface);
+
+  border-radius: 180px 180px 30px 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: visible;
+
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* =========================
+   PROFILE CIRCLE
+========================= */
+
+.hero-card-circle {
+  position: absolute;
+
+  width: 290px;
+  height: 290px;
+
+  top: 43%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    135deg,
+    var(--accent-light),
+    var(--accent)
+  );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  z-index: 1;
+
+  box-shadow:
+    0 20px 50px rgba(67, 51, 76, 0.15);
+
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* =========================
+   PROFILE IMAGE
+========================= */
+
+.profile-image {
+  width: 94%;
+  height: 94%;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  object-position: center 30%;
+
+  display: block;
+
+  z-index: 2;
+}
+
+/* =========================
+   OUTER DECORATIVE RING
+========================= */
+
+.hero-card::before {
+  content: '';
+
+  position: absolute;
+
+  width: 320px;
+  height: 320px;
+
+  top: 43%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border: 2px solid var(--accent-light);
+
+  border-radius: 50%;
+
+  opacity: 0.6;
+
+  z-index: 3;
+
+  pointer-events: none;
+
+  transition:
+    border-color 0.3s ease;
+}
+
+/* =========================
+   SMALL DECORATIVE CIRCLE
+========================= */
+
+.hero-card::after {
+  content: '';
+
+  position: absolute;
+
+  width: 26px;
+  height: 26px;
+
+  background-color: var(--decorative-circle);
+
+  border-radius: 50%;
+
+  /*
+    Positioned beside the profile circle,
+    not on top of the photo.
+  */
+
+  right: 18px;
+  top: 65px;
+
+  z-index: 5;
+
+  box-shadow:
+    0 8px 20px var(--decorative-shadow);
+
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* =========================
+   SMALL CIRCLE HOVER
+========================= */
+
+.hero-card:hover::after {
+  transform: scale(1.15);
+
+  box-shadow:
+    0 10px 25px var(--decorative-shadow);
+}
+
+/* =========================
+   SOFTWARE / DEVELOPER
+========================= */
+
+.hero-card-content {
+  position: absolute;
+
+  left: 50%;
+  bottom: 25px;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  white-space: nowrap;
+
+  z-index: 6;
+}
+
+.hero-card-content span {
+  color: var(--text-primary);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  letter-spacing: 3px;
+}
+
+.hero-card-content strong {
+  margin-top: 6px;
+
+  color: var(--accent);
+
+  font-size: 28px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+  .hero {
+    padding: 120px 30px 60px;
+  }
+
+  .hero-container {
+    flex-direction: column;
+
+    text-align: center;
+
+    gap: 60px;
+  }
+
+  .hero-content {
+    max-width: 700px;
+  }
+
+  .hero-description {
+    margin: 0 auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-visual {
+    width: 100%;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 500px) {
+
+  .hero {
+    padding: 110px 20px 50px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero h2 {
+    font-size: 22px;
+  }
+
+  .hero-description {
+    font-size: 15px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+  }
+
+  .hero-card {
+    width: 300px;
+    height: 390px;
+  }
+
+  .hero-card-circle {
+    width: 240px;
+    height: 240px;
+  }
+
+  .hero-card::before {
+    width: 265px;
+    height: 265px;
+  }
+
+  .hero-card::after {
+    width: 22px;
+    height: 22px;
+
+    right: 15px;
+    top: 65px;
+  }
+
+  .hero-card-content {
+    bottom: 22px;
+  }
+
+  .hero-card-content strong {
+    font-size: 24px;
+  }
+}
+
+/* =========================
+   HERO ANIMATIONS
+========================= */
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroFadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes heroFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+
+/* Hero text */
+
+.hero-greeting {
+  animation: heroFadeUp 0.7s ease-out both;
+  animation-delay: 0.1s;
+}
+
+.hero-content h1 {
+  animation: heroFadeUp 0.7s ease-out both;
+  animation-delay: 0.2s;
+}
+
+.hero-content h2 {
+  animation: heroFadeUp 0.7s ease-out both;
+  animation-delay: 0.3s;
+}
+
+.hero-description {
+  animation: heroFadeUp 0.7s ease-out both;
+  animation-delay: 0.4s;
+}
+
+.hero-buttons {
+  animation: heroFadeUp 0.7s ease-out both;
+  animation-delay: 0.5s;
+}
+
+
+/* Hero visual */
+
+.hero-visual {
+  animation:
+    heroFadeRight 0.9s ease-out both,
+    heroFloat 5s ease-in-out 1s infinite;
+}
+
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-greeting,
+  .hero-content h1,
+  .hero-content h2,
+  .hero-description,
+  .hero-buttons,
+  .hero-visual {
+    animation: none;
+  }
+}

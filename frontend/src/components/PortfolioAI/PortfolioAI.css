@@ -1,0 +1,855 @@
+/* =========================
+   PORTFOLIO AI - LYRA
+========================= */
+
+.portfolio-ai-button {
+  position: fixed;
+
+  right: 30px;
+  bottom: 30px;
+
+  width: 78px;
+  height: 78px;
+
+  padding: 4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 3px solid var(--accent);
+  border-radius: 50%;
+
+  background-color: var(--accent-bg);
+
+  cursor: pointer;
+
+  z-index: 9999;
+
+  box-shadow:
+    0 10px 30px rgba(207, 65, 115, 0.25);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* =========================
+   BUTTON HOVER
+========================= */
+
+.portfolio-ai-button:hover {
+  transform: translateY(-5px) scale(1.05);
+
+  box-shadow:
+    0 15px 40px rgba(207, 65, 115, 0.4);
+}
+
+
+/* =========================
+   LYRA BUTTON IMAGE
+========================= */
+
+.lyra-test-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+
+  border-radius: 50%;
+
+  animation: lyraFloat 3s ease-in-out infinite;
+}
+
+
+/* =========================
+   LYRA FLOATING ANIMATION
+========================= */
+
+@keyframes lyraFloat {
+
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================
+   ONLINE PULSE
+========================= */
+
+.ai-pulse {
+  position: absolute;
+
+  width: 12px;
+  height: 12px;
+
+  right: 2px;
+  top: 2px;
+
+  background-color: #7cffb2;
+
+  border: 2px solid var(--background);
+
+  border-radius: 50%;
+
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+
+@keyframes pulseGlow {
+
+  0%,
+  100% {
+    transform: scale(1);
+
+    box-shadow:
+      0 0 0 0 rgba(124, 255, 178, 0.4);
+  }
+
+  50% {
+    transform: scale(1.15);
+
+    box-shadow:
+      0 0 0 5px rgba(124, 255, 178, 0);
+  }
+}
+
+
+/* =========================
+   CHAT WINDOW
+========================= */
+
+.portfolio-ai-window {
+  position: fixed;
+
+  right: 30px;
+  bottom: 30px;
+
+  width: 370px;
+  height: 560px;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background-color: var(--surface);
+
+  border: 1px solid var(--accent-light);
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.25);
+
+  z-index: 10000;
+
+  animation: aiWindowOpen 0.35s ease-out;
+}
+
+
+/* =========================
+   CHAT WINDOW OPEN
+========================= */
+
+@keyframes aiWindowOpen {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(20px)
+      scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.portfolio-ai-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 14px 16px;
+
+  background-color: var(--accent);
+
+  color: white;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================
+   HEADER INFORMATION
+========================= */
+
+.ai-header-info {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  min-width: 0;
+}
+
+
+/* =========================
+   LYRA HEADER IMAGE
+========================= */
+
+.lyra-header-image {
+  width: 46px;
+  height: 46px;
+
+  flex-shrink: 0;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+
+  border-radius: 50%;
+
+  border: 2px solid var(--accent-light);
+
+  animation: lyraFloat 3s ease-in-out infinite;
+}
+
+
+/* =========================
+   HEADER TEXT
+========================= */
+
+.ai-header-info h3 {
+  margin: 0 0 3px;
+
+  color: white;
+
+  font-size: 16px;
+  font-weight: 600;
+}
+
+
+.ai-header-info span {
+  color: rgba(255, 255, 255, 0.8);
+
+  font-size: 11px;
+}
+
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.ai-close-button {
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  background: transparent;
+
+  color: white;
+
+  font-size: 25px;
+
+  cursor: pointer;
+
+  border-radius: 50%;
+
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.ai-close-button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+
+  transform: rotate(90deg);
+}
+
+
+/* =========================
+   CHAT BODY
+========================= */
+
+.portfolio-ai-body {
+  flex: 1;
+
+  overflow-y: auto;
+
+  padding: 28px 20px;
+
+  background-color: var(--surface);
+}
+
+
+/* =========================
+   WELCOME
+========================= */
+
+.ai-welcome {
+  text-align: center;
+}
+
+
+/* =========================
+   LARGE LYRA IMAGE
+========================= */
+
+.lyra-large-image {
+  width: 100px;
+  height: 100px;
+
+  display: block;
+
+  margin: 0 auto 18px;
+
+  object-fit: cover;
+  object-position: center;
+
+  border-radius: 50%;
+
+  border: 3px solid var(--accent-light);
+
+  box-shadow:
+    0 10px 30px rgba(207, 65, 115, 0.2);
+
+  animation: lyraFloat 3s ease-in-out infinite;
+}
+
+
+/* =========================
+   WELCOME TITLE
+========================= */
+
+.ai-welcome h4 {
+  margin: 0 0 8px;
+
+  color: var(--text-primary);
+
+  font-size: 19px;
+  font-weight: 600;
+}
+
+
+/* =========================
+   WELCOME DESCRIPTION
+========================= */
+
+.ai-welcome p {
+  max-width: 280px;
+
+  margin: 0 auto;
+
+  color: var(--text-secondary);
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================
+   SUGGESTIONS
+========================= */
+
+.ai-suggestions {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+  margin-top: 28px;
+}
+
+
+/* =========================
+   SUGGESTION BUTTON
+========================= */
+
+.ai-suggestions button {
+  width: 100%;
+
+  padding: 12px 14px;
+
+  text-align: left;
+
+  background-color: var(--background);
+
+  border: 1px solid var(--accent-light);
+
+  border-radius: 12px;
+
+  color: var(--text-primary);
+
+  font-size: 12px;
+
+  line-height: 1.4;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.ai-suggestions button:hover {
+  background-color: var(--accent-bg);
+
+  border-color: var(--accent);
+
+  transform: translateX(4px);
+
+  box-shadow:
+    0 5px 15px rgba(207, 65, 115, 0.12);
+}
+
+
+/* =========================
+   AI MESSAGES
+========================= */
+
+.ai-messages {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.ai-message {
+  display: flex;
+
+  align-items: flex-end;
+
+  gap: 8px;
+
+  max-width: 92%;
+}
+
+
+.ai-message.lyra {
+  align-self: flex-start;
+}
+
+
+.ai-message.user {
+  align-self: flex-end;
+
+  flex-direction: row-reverse;
+}
+
+
+/* =========================
+   MESSAGE AVATAR
+========================= */
+
+.message-avatar {
+  width: 32px;
+  height: 32px;
+
+  flex-shrink: 0;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border: 2px solid var(--accent-light);
+
+  animation: lyraFloat 3s ease-in-out infinite;
+}
+
+
+/* =========================
+   MESSAGE BUBBLE
+========================= */
+
+.message-bubble {
+  padding: 11px 14px;
+
+  border-radius: 16px;
+
+  font-size: 13px;
+
+  line-height: 1.55;
+
+  word-wrap: break-word;
+
+  overflow-wrap: break-word;
+}
+
+
+/* =========================
+   LYRA MESSAGE
+========================= */
+
+.ai-message.lyra .message-bubble {
+  background-color: var(--background);
+
+  color: var(--text-primary);
+
+  border: 1px solid var(--accent-light);
+
+  border-bottom-left-radius: 5px;
+
+  box-shadow:
+    0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =========================
+   USER MESSAGE
+========================= */
+
+.ai-message.user .message-bubble {
+  background-color: var(--accent);
+
+  color: white;
+
+  border-bottom-right-radius: 5px;
+
+  box-shadow:
+    0 3px 12px rgba(207, 65, 115, 0.18);
+}
+
+
+/* =========================
+   INPUT AREA
+========================= */
+
+.portfolio-ai-input {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 14px 16px;
+
+  border-top: 1px solid var(--border);
+
+  background-color: var(--surface);
+
+  flex-shrink: 0;
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+.portfolio-ai-input input {
+  flex: 1;
+
+  min-width: 0;
+
+  padding: 11px 14px;
+
+  background-color: var(--background);
+
+  border: 1px solid var(--border);
+
+  border-radius: 20px;
+
+  outline: none;
+
+  color: var(--text-primary);
+
+  font-size: 13px;
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.portfolio-ai-input input::placeholder {
+  color: var(--text-secondary);
+}
+
+
+.portfolio-ai-input input:focus {
+  border-color: var(--accent);
+
+  box-shadow:
+    0 0 0 3px var(--accent-bg);
+}
+
+
+/* =========================
+   SEND BUTTON
+========================= */
+
+.ai-send-button {
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background-color: var(--accent);
+
+  color: white;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.ai-send-button:hover {
+  transform: scale(1.08);
+
+  background-color: var(--text-primary);
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+.ai-send-button:active {
+  transform: scale(0.95);
+}
+
+
+/* =========================
+   CHAT SCROLLBAR
+========================= */
+
+.portfolio-ai-body::-webkit-scrollbar {
+  width: 5px;
+}
+
+
+.portfolio-ai-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+.portfolio-ai-body::-webkit-scrollbar-thumb {
+  background-color: var(--accent-light);
+
+  border-radius: 10px;
+}
+
+
+.portfolio-ai-body::-webkit-scrollbar-thumb:hover {
+  background-color: var(--accent);
+}
+
+
+/* =========================
+   MESSAGE APPEAR ANIMATION
+========================= */
+
+.ai-message {
+  animation: messageAppear 0.3s ease-out both;
+}
+
+
+@keyframes messageAppear {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 500px) {
+
+  .portfolio-ai-button {
+    right: 20px;
+
+    bottom: 20px;
+
+    width: 64px;
+    height: 64px;
+  }
+
+
+  .portfolio-ai-window {
+    right: 12px;
+
+    bottom: 12px;
+
+    width: calc(100% - 24px);
+
+    height: min(600px, calc(100vh - 24px));
+
+    border-radius: 20px;
+  }
+
+
+  .portfolio-ai-header {
+    padding: 12px 14px;
+  }
+
+
+  .lyra-header-image {
+    width: 42px;
+    height: 42px;
+  }
+
+
+  .portfolio-ai-body {
+    padding: 22px 16px;
+  }
+
+
+  .lyra-large-image {
+    width: 90px;
+    height: 90px;
+  }
+
+
+  .ai-message {
+    max-width: 94%;
+  }
+
+
+  .message-bubble {
+    font-size: 12px;
+
+    padding: 10px 12px;
+  }
+
+
+  .portfolio-ai-input {
+    padding: 12px;
+  }
+
+
+  .portfolio-ai-input input {
+    font-size: 12px;
+  }
+
+}
+
+
+/* =========================
+   VERY SMALL SCREENS
+========================= */
+
+@media (max-width: 360px) {
+
+  .portfolio-ai-window {
+    right: 8px;
+
+    bottom: 8px;
+
+    width: calc(100% - 16px);
+
+    height: calc(100vh - 16px);
+  }
+
+
+  .portfolio-ai-button {
+    right: 15px;
+
+    bottom: 15px;
+  }
+
+}
+
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .lyra-test-image,
+  .lyra-header-image,
+  .lyra-large-image,
+  .message-avatar,
+  .ai-pulse {
+    animation: none;
+  }
+
+
+  .portfolio-ai-window {
+    animation: none;
+  }
+
+
+  .ai-message {
+    animation: none;
+  }
+
+
+  .portfolio-ai-button,
+  .ai-suggestions button,
+  .ai-close-button,
+  .ai-send-button {
+    transition: none;
+  }
+
+}
