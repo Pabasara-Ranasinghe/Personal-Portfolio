@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import './PortfolioAI.css'
 import lyraImage from '../../assets/Lyra.jpeg'
 
@@ -8,10 +8,23 @@ function PortfolioAI() {
   const [messages, setMessages] = useState([])
   const [isLoading, setIsLoading] = useState(false)
 
+  const messagesEndRef = useRef(null)
+
   // =========================
-  // SEND MESSAGE TO BACKEND
+  // AUTO SCROLL
   // =========================
-  
+
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({
+      behavior: 'smooth'
+    })
+  }, [messages, isLoading])
+
+
+  // =========================
+  // SEND MESSAGE
+  // =========================
+
   const sendMessage = async (text = message) => {
     const userMessage = text.trim()
 
@@ -19,7 +32,7 @@ function PortfolioAI() {
       return
     }
 
-    // Add user's message to chat
+    // Add user message
     setMessages((previousMessages) => [
       ...previousMessages,
       {
@@ -28,10 +41,7 @@ function PortfolioAI() {
       }
     ])
 
-    // Clear input
     setMessage('')
-
-    // Show loading state
     setIsLoading(true)
 
     try {
@@ -49,12 +59,11 @@ function PortfolioAI() {
       )
 
       if (!response.ok) {
-        throw new Error('Failed to connect to Lyra backend')
+        throw new Error('Failed to connect to backend')
       }
 
       const data = await response.json()
 
-      // Add Lyra's response
       setMessages((previousMessages) => [
         ...previousMessages,
         {
@@ -71,7 +80,8 @@ function PortfolioAI() {
         ...previousMessages,
         {
           sender: 'lyra',
-          text: 'Sorry, I could not connect to my backend right now. Please make sure the Spring Boot server is running. 🌸'
+          text:
+            'Sorry, I could not connect to my backend right now. Please make sure the Spring Boot server is running. 🌸'
         }
       ])
 
@@ -86,14 +96,15 @@ function PortfolioAI() {
   // =========================
 
   const handleKeyDown = (event) => {
-    if (event.key === 'Enter') {
+    if (event.key === 'Enter' && !event.shiftKey) {
+      event.preventDefault()
       sendMessage()
     }
   }
 
 
   // =========================
-  // SUGGESTED QUESTION
+  // SUGGESTION
   // =========================
 
   const handleSuggestion = (question) => {
@@ -139,17 +150,21 @@ function PortfolioAI() {
 
             <div className="ai-header-info">
 
-              <img
-                src={lyraImage}
-                alt="Lyra"
-                className="lyra-header-image"
-              />
+              <div className="lyra-header-wrapper">
+
+                <img
+                  src={lyraImage}
+                  alt="Lyra"
+                  className="lyra-header-image"
+                />
+
+                <span className="header-online-dot"></span>
+
+              </div>
 
               <div>
 
-                <h3>
-                  Lyra 🌸
-                </h3>
+                <h3>Lyra 🌸</h3>
 
                 <span>
                   Pabasara's Portfolio Assistant
@@ -158,9 +173,6 @@ function PortfolioAI() {
               </div>
 
             </div>
-
-
-            {/* CLOSE BUTTON */}
 
             <button
               className="ai-close-button"
@@ -179,11 +191,15 @@ function PortfolioAI() {
 
           <div className="portfolio-ai-body">
 
-            {/* WELCOME MESSAGE */}
+            {/* =========================
+                WELCOME
+            ========================= */}
 
             {messages.length === 0 && (
-              <>
-                <div className="ai-welcome">
+
+              <div className="ai-welcome">
+
+                <div className="lyra-welcome-wrapper">
 
                   <img
                     src={lyraImage}
@@ -191,67 +207,83 @@ function PortfolioAI() {
                     className="lyra-large-image"
                   />
 
-                  <h4>
-                    Hi! I'm Lyra 🌸
-                  </h4>
-
-                  <p>
-                    I'm Pabasara's portfolio assistant.
-                    Ask me anything about her skills,
-                    projects, education, or experience.
-                  </p>
+                  <span className="welcome-online-dot"></span>
 
                 </div>
 
+                <h4>
+                  Hi! I'm Lyra 🌸
+                </h4>
 
-                {/* =========================
-                    SUGGESTED QUESTIONS
-                ========================= */}
+                <p>
+                  I'm Pabasara's portfolio assistant.
+                  Ask me about her skills, projects,
+                  education, or achievements.
+                </p>
 
-                <div className="ai-suggestions">
+              </div>
 
-                  <button
-                    onClick={() =>
-                      handleSuggestion(
-                        'What technologies does Pabasara know?'
-                      )
-                    }
-                  >
-                    What technologies does Pabasara know?
-                  </button>
+            )}
 
-                  <button
-                    onClick={() =>
-                      handleSuggestion(
-                        'Tell me about MilkGuard.'
-                      )
-                    }
-                  >
-                    Tell me about MilkGuard.
-                  </button>
 
-                  <button
-                    onClick={() =>
-                      handleSuggestion(
-                        'What projects has Pabasara built?'
-                      )
-                    }
-                  >
-                    What projects has Pabasara built?
-                  </button>
+            {/* =========================
+                SUGGESTIONS
+            ========================= */}
 
-                  <button
-                    onClick={() =>
-                      handleSuggestion(
-                        'Tell me about her education.'
-                      )
-                    }
-                  >
-                    Tell me about her education.
-                  </button>
+            {messages.length === 0 && (
 
-                </div>
-              </>
+              <div className="ai-suggestions">
+
+                <p className="suggestions-title">
+                  You can ask me...
+                </p>
+
+                <button
+                  onClick={() =>
+                    handleSuggestion(
+                      'What technologies does Pabasara know?'
+                    )
+                  }
+                >
+                  <span>💻</span>
+                  What technologies does Pabasara know?
+                </button>
+
+                <button
+                  onClick={() =>
+                    handleSuggestion(
+                      'Tell me about MilkGuard.'
+                    )
+                  }
+                >
+                  <span>🥛</span>
+                  Tell me about MilkGuard.
+                </button>
+
+                <button
+                  onClick={() =>
+                    handleSuggestion(
+                      'What projects has Pabasara built?'
+                    )
+                  }
+                >
+                  <span>🚀</span>
+                  What projects has Pabasara built?
+                </button>
+
+                <button
+                  onClick={() =>
+                    handleSuggestion(
+                      'Tell me about her education.'
+                    )
+                  }
+                >
+                  <span>🎓</span>
+                  Tell me about her education.
+                </button>
+
+              </div>
+
             )}
 
 
@@ -259,85 +291,76 @@ function PortfolioAI() {
                 CHAT MESSAGES
             ========================= */}
 
-            {messages.map((chatMessage, index) => (
+            <div className="chat-messages">
 
-              <div
-                key={index}
-                style={{
-                  display: 'flex',
-                  justifyContent:
+              {messages.map((chatMessage, index) => (
+
+                <div
+                  key={index}
+                  className={`chat-message-row ${
                     chatMessage.sender === 'user'
-                      ? 'flex-end'
-                      : 'flex-start',
-                  marginBottom: '12px'
-                }}
-              >
-
-                <div
-                  style={{
-                    maxWidth: '80%',
-                    padding: '10px 14px',
-                    borderRadius: '14px',
-
-                    background:
-                      chatMessage.sender === 'user'
-                        ? 'var(--accent)'
-                        : 'var(--background)',
-
-                    color:
-                      chatMessage.sender === 'user'
-                        ? 'white'
-                        : 'var(--text-primary)',
-
-                    border:
-                      chatMessage.sender === 'lyra'
-                        ? '1px solid var(--accent-light)'
-                        : 'none',
-
-                    fontSize: '13px',
-                    lineHeight: '1.5'
-                  }}
+                      ? 'user-row'
+                      : 'lyra-row'
+                  }`}
                 >
 
-                  {chatMessage.text}
+                  {/* LYRA AVATAR */}
+
+                  {chatMessage.sender === 'lyra' && (
+
+                    <img
+                      src={lyraImage}
+                      alt="Lyra"
+                      className="message-avatar"
+                    />
+
+                  )}
+
+
+                  <div
+                    className={`chat-bubble ${
+                      chatMessage.sender === 'user'
+                        ? 'user-bubble'
+                        : 'lyra-bubble'
+                    }`}
+                  >
+                    {chatMessage.text}
+                  </div>
 
                 </div>
 
-              </div>
-
-            ))}
+              ))}
 
 
-            {/* =========================
-                LOADING
-            ========================= */}
+              {/* =========================
+                  TYPING INDICATOR
+              ========================= */}
 
-            {isLoading && (
+              {isLoading && (
 
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'flex-start',
-                  marginBottom: '12px'
-                }}
-              >
+                <div className="chat-message-row lyra-row">
 
-                <div
-                  style={{
-                    padding: '10px 14px',
-                    borderRadius: '14px',
-                    background: 'var(--background)',
-                    border: '1px solid var(--accent-light)',
-                    color: 'var(--text-secondary)',
-                    fontSize: '13px'
-                  }}
-                >
-                  Lyra is typing... 🌸
+                  <img
+                    src={lyraImage}
+                    alt="Lyra"
+                    className="message-avatar"
+                  />
+
+                  <div className="typing-bubble">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                  </div>
+
                 </div>
 
-              </div>
+              )}
 
-            )}
+              <div ref={messagesEndRef}></div>
+
+            </div>
 
           </div>
 
@@ -350,7 +373,7 @@ function PortfolioAI() {
 
             <input
               type="text"
-              placeholder="Ask something..."
+              placeholder="Ask Lyra something..."
               value={message}
               onChange={(event) =>
                 setMessage(event.target.value)
@@ -362,7 +385,7 @@ function PortfolioAI() {
             <button
               className="ai-send-button"
               onClick={() => sendMessage()}
-              disabled={isLoading}
+              disabled={isLoading || !message.trim()}
               aria-label="Send message"
             >
               ↑
@@ -377,4 +400,3 @@ function PortfolioAI() {
 }
 
 export default PortfolioAI
-

@@ -1,6 +1,11 @@
-/* =========================
+/* =========================================================
    PORTFOLIO AI - LYRA
-========================= */
+========================================================= */
+
+
+/* =========================================================
+   FLOATING BUTTON
+========================================================= */
 
 .portfolio-ai-button {
   position: fixed;
@@ -20,7 +25,7 @@
   border: 3px solid var(--accent);
   border-radius: 50%;
 
-  background-color: var(--accent-bg);
+  background: var(--accent-bg);
 
   cursor: pointer;
 
@@ -34,11 +39,6 @@
     box-shadow 0.3s ease;
 }
 
-
-/* =========================
-   BUTTON HOVER
-========================= */
-
 .portfolio-ai-button:hover {
   transform: translateY(-5px) scale(1.05);
 
@@ -47,9 +47,9 @@
 }
 
 
-/* =========================
+/* =========================================================
    LYRA BUTTON IMAGE
-========================= */
+========================================================= */
 
 .lyra-test-image {
   width: 100%;
@@ -66,9 +66,9 @@
 }
 
 
-/* =========================
-   LYRA FLOATING ANIMATION
-========================= */
+/* =========================================================
+   LYRA FLOAT
+========================================================= */
 
 @keyframes lyraFloat {
 
@@ -86,9 +86,9 @@
 }
 
 
-/* =========================
+/* =========================================================
    ONLINE PULSE
-========================= */
+========================================================= */
 
 .ai-pulse {
   position: absolute;
@@ -99,7 +99,7 @@
   right: 2px;
   top: 2px;
 
-  background-color: #7cffb2;
+  background: #7cffb2;
 
   border: 2px solid var(--background);
 
@@ -107,7 +107,6 @@
 
   animation: pulseGlow 2s ease-in-out infinite;
 }
-
 
 @keyframes pulseGlow {
 
@@ -128,9 +127,9 @@
 }
 
 
-/* =========================
+/* =========================================================
    CHAT WINDOW
-========================= */
+========================================================= */
 
 .portfolio-ai-window {
   position: fixed;
@@ -146,7 +145,7 @@
 
   overflow: hidden;
 
-  background-color: var(--surface);
+  background: var(--surface);
 
   border: 1px solid var(--accent-light);
 
@@ -159,11 +158,6 @@
 
   animation: aiWindowOpen 0.35s ease-out;
 }
-
-
-/* =========================
-   CHAT WINDOW OPEN
-========================= */
 
 @keyframes aiWindowOpen {
 
@@ -185,9 +179,9 @@
 }
 
 
-/* =========================
+/* =========================================================
    HEADER
-========================= */
+========================================================= */
 
 .portfolio-ai-header {
   display: flex;
@@ -197,17 +191,15 @@
 
   padding: 14px 16px;
 
-  background-color: var(--accent);
+  background: var(--accent);
 
   color: white;
-
-  flex-shrink: 0;
 }
 
 
-/* =========================
-   HEADER INFORMATION
-========================= */
+/* =========================================================
+   HEADER INFO
+========================================================= */
 
 .ai-header-info {
   display: flex;
@@ -215,20 +207,28 @@
   align-items: center;
 
   gap: 12px;
-
-  min-width: 0;
 }
 
 
-/* =========================
-   LYRA HEADER IMAGE
-========================= */
+/* =========================================================
+   HEADER IMAGE WRAPPER
+========================================================= */
+
+.lyra-header-wrapper {
+  position: relative;
+
+  width: 46px;
+  height: 46px;
+}
+
+
+/* =========================================================
+   HEADER IMAGE
+========================================================= */
 
 .lyra-header-image {
   width: 46px;
   height: 46px;
-
-  flex-shrink: 0;
 
   display: block;
 
@@ -243,9 +243,30 @@
 }
 
 
-/* =========================
+/* =========================================================
+   HEADER ONLINE DOT
+========================================================= */
+
+.header-online-dot {
+  position: absolute;
+
+  width: 10px;
+  height: 10px;
+
+  right: -1px;
+  bottom: 1px;
+
+  background: #7cffb2;
+
+  border: 2px solid var(--accent);
+
+  border-radius: 50%;
+}
+
+
+/* =========================================================
    HEADER TEXT
-========================= */
+========================================================= */
 
 .ai-header-info h3 {
   margin: 0 0 3px;
@@ -256,7 +277,6 @@
   font-weight: 600;
 }
 
-
 .ai-header-info span {
   color: rgba(255, 255, 255, 0.8);
 
@@ -264,17 +284,16 @@
 }
 
 
-/* =========================
+/* =========================================================
    CLOSE BUTTON
-========================= */
+========================================================= */
 
 .ai-close-button {
   width: 34px;
   height: 34px;
 
-  flex-shrink: 0;
-
   display: flex;
+
   align-items: center;
   justify-content: center;
 
@@ -295,49 +314,62 @@
     transform 0.3s ease;
 }
 
-
 .ai-close-button:hover {
-  background-color: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.15);
 
   transform: rotate(90deg);
 }
 
 
-/* =========================
+/* =========================================================
    CHAT BODY
-========================= */
+========================================================= */
 
 .portfolio-ai-body {
   flex: 1;
 
   overflow-y: auto;
 
-  padding: 28px 20px;
+  padding: 24px 18px;
 
-  background-color: var(--surface);
+  background: var(--surface);
 }
 
 
-/* =========================
+/* =========================================================
    WELCOME
-========================= */
+========================================================= */
 
 .ai-welcome {
   text-align: center;
+
+  margin-bottom: 24px;
 }
 
 
-/* =========================
+/* =========================================================
+   WELCOME IMAGE WRAPPER
+========================================================= */
+
+.lyra-welcome-wrapper {
+  position: relative;
+
+  width: 100px;
+  height: 100px;
+
+  margin: 0 auto 16px;
+}
+
+
+/* =========================================================
    LARGE LYRA IMAGE
-========================= */
+========================================================= */
 
 .lyra-large-image {
   width: 100px;
   height: 100px;
 
   display: block;
-
-  margin: 0 auto 18px;
 
   object-fit: cover;
   object-position: center;
@@ -353,9 +385,30 @@
 }
 
 
-/* =========================
+/* =========================================================
+   WELCOME ONLINE DOT
+========================================================= */
+
+.welcome-online-dot {
+  position: absolute;
+
+  width: 12px;
+  height: 12px;
+
+  right: 2px;
+  bottom: 5px;
+
+  background: #7cffb2;
+
+  border: 3px solid var(--surface);
+
+  border-radius: 50%;
+}
+
+
+/* =========================================================
    WELCOME TITLE
-========================= */
+========================================================= */
 
 .ai-welcome h4 {
   margin: 0 0 8px;
@@ -363,13 +416,14 @@
   color: var(--text-primary);
 
   font-size: 19px;
+
   font-weight: 600;
 }
 
 
-/* =========================
-   WELCOME DESCRIPTION
-========================= */
+/* =========================================================
+   WELCOME TEXT
+========================================================= */
 
 .ai-welcome p {
   max-width: 280px;
@@ -384,33 +438,58 @@
 }
 
 
-/* =========================
+/* =========================================================
    SUGGESTIONS
-========================= */
+========================================================= */
 
 .ai-suggestions {
   display: flex;
 
   flex-direction: column;
 
-  gap: 10px;
+  gap: 9px;
 
-  margin-top: 28px;
+  margin-top: 20px;
 }
 
 
-/* =========================
+/* =========================================================
+   SUGGESTION TITLE
+========================================================= */
+
+.suggestions-title {
+  margin: 0 0 2px;
+
+  color: var(--text-secondary);
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.7px;
+}
+
+
+/* =========================================================
    SUGGESTION BUTTON
-========================= */
+========================================================= */
 
 .ai-suggestions button {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
   width: 100%;
 
-  padding: 12px 14px;
+  padding: 11px 12px;
 
   text-align: left;
 
-  background-color: var(--background);
+  background: var(--background);
 
   border: 1px solid var(--accent-light);
 
@@ -419,8 +498,6 @@
   color: var(--text-primary);
 
   font-size: 12px;
-
-  line-height: 1.4;
 
   cursor: pointer;
 
@@ -431,66 +508,79 @@
     box-shadow 0.3s ease;
 }
 
+.ai-suggestions button span {
+  flex-shrink: 0;
+
+  width: 26px;
+  height: 26px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: var(--accent-bg);
+
+  border-radius: 8px;
+
+  font-size: 14px;
+}
 
 .ai-suggestions button:hover {
-  background-color: var(--accent-bg);
+  background: var(--accent-bg);
 
   border-color: var(--accent);
 
-  transform: translateX(4px);
+  transform: translateX(3px);
 
   box-shadow:
     0 5px 15px rgba(207, 65, 115, 0.12);
 }
 
 
-/* =========================
-   AI MESSAGES
-========================= */
+/* =========================================================
+   CHAT MESSAGES
+========================================================= */
 
-.ai-messages {
+.chat-messages {
   display: flex;
 
   flex-direction: column;
 
-  gap: 16px;
+  gap: 2px;
 }
 
 
-/* =========================
-   MESSAGE
-========================= */
+/* =========================================================
+   MESSAGE ROW
+========================================================= */
 
-.ai-message {
+.chat-message-row {
   display: flex;
 
   align-items: flex-end;
 
   gap: 8px;
 
-  max-width: 92%;
+  margin-bottom: 10px;
+}
+
+.user-row {
+  justify-content: flex-end;
+}
+
+.lyra-row {
+  justify-content: flex-start;
 }
 
 
-.ai-message.lyra {
-  align-self: flex-start;
-}
-
-
-.ai-message.user {
-  align-self: flex-end;
-
-  flex-direction: row-reverse;
-}
-
-
-/* =========================
+/* =========================================================
    MESSAGE AVATAR
-========================= */
+========================================================= */
 
 .message-avatar {
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
 
   flex-shrink: 0;
 
@@ -498,89 +588,158 @@
 
   border-radius: 50%;
 
-  border: 2px solid var(--accent-light);
-
-  animation: lyraFloat 3s ease-in-out infinite;
+  border: 1px solid var(--accent-light);
 }
 
 
-/* =========================
-   MESSAGE BUBBLE
-========================= */
+/* =========================================================
+   CHAT BUBBLES
+========================================================= */
 
-.message-bubble {
-  padding: 11px 14px;
+.chat-bubble {
+  max-width: 75%;
 
-  border-radius: 16px;
+  padding: 10px 13px;
 
   font-size: 13px;
 
-  line-height: 1.55;
+  line-height: 1.5;
 
   word-wrap: break-word;
-
-  overflow-wrap: break-word;
 }
 
 
-/* =========================
-   LYRA MESSAGE
-========================= */
+/* =========================================================
+   USER BUBBLE
+========================================================= */
 
-.ai-message.lyra .message-bubble {
-  background-color: var(--background);
+.user-bubble {
+  background: var(--accent);
+
+  color: white;
+
+  border-radius:
+    16px
+    16px
+    4px
+    16px;
+
+  box-shadow:
+    0 4px 12px rgba(207, 65, 115, 0.15);
+}
+
+
+/* =========================================================
+   LYRA BUBBLE
+========================================================= */
+
+.lyra-bubble {
+  background: var(--background);
 
   color: var(--text-primary);
 
   border: 1px solid var(--accent-light);
 
-  border-bottom-left-radius: 5px;
-
-  box-shadow:
-    0 3px 12px rgba(0, 0, 0, 0.04);
+  border-radius:
+    16px
+    16px
+    16px
+    4px;
 }
 
 
-/* =========================
-   USER MESSAGE
-========================= */
+/* =========================================================
+   TYPING BUBBLE
+========================================================= */
 
-.ai-message.user .message-bubble {
-  background-color: var(--accent);
+.typing-bubble {
+  display: flex;
 
-  color: white;
+  align-items: center;
 
-  border-bottom-right-radius: 5px;
+  gap: 4px;
 
-  box-shadow:
-    0 3px 12px rgba(207, 65, 115, 0.18);
+  padding: 12px 14px;
+
+  background: var(--background);
+
+  border: 1px solid var(--accent-light);
+
+  border-radius:
+    16px
+    16px
+    16px
+    4px;
 }
 
 
-/* =========================
+/* =========================================================
+   TYPING DOTS
+========================================================= */
+
+.typing-bubble span {
+  width: 6px;
+  height: 6px;
+
+  background: var(--accent);
+
+  border-radius: 50%;
+
+  animation: typingDot 1.2s infinite ease-in-out;
+}
+
+.typing-bubble span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.typing-bubble span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.typing-bubble span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes typingDot {
+
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+
+    opacity: 0.4;
+  }
+
+  30% {
+    transform: translateY(-4px);
+
+    opacity: 1;
+  }
+}
+
+
+/* =========================================================
    INPUT AREA
-========================= */
+========================================================= */
 
 .portfolio-ai-input {
   display: flex;
 
   align-items: center;
 
-  gap: 10px;
+  gap: 9px;
 
-  padding: 14px 16px;
+  padding: 12px 14px;
 
   border-top: 1px solid var(--border);
 
-  background-color: var(--surface);
-
-  flex-shrink: 0;
+  background: var(--surface);
 }
 
 
-/* =========================
+/* =========================================================
    INPUT
-========================= */
+========================================================= */
 
 .portfolio-ai-input input {
   flex: 1;
@@ -589,7 +748,7 @@
 
   padding: 11px 14px;
 
-  background-color: var(--background);
+  background: var(--background);
 
   border: 1px solid var(--border);
 
@@ -606,11 +765,9 @@
     box-shadow 0.3s ease;
 }
 
-
 .portfolio-ai-input input::placeholder {
   color: var(--text-secondary);
 }
-
 
 .portfolio-ai-input input:focus {
   border-color: var(--accent);
@@ -619,10 +776,14 @@
     0 0 0 3px var(--accent-bg);
 }
 
+.portfolio-ai-input input:disabled {
+  opacity: 0.7;
+}
 
-/* =========================
+
+/* =========================================================
    SEND BUTTON
-========================= */
+========================================================= */
 
 .ai-send-button {
   width: 40px;
@@ -631,6 +792,7 @@
   flex-shrink: 0;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
@@ -638,7 +800,7 @@
 
   border-radius: 50%;
 
-  background-color: var(--accent);
+  background: var(--accent);
 
   color: white;
 
@@ -649,85 +811,53 @@
   transition:
     transform 0.3s ease,
     background-color 0.3s ease,
-    box-shadow 0.3s ease;
+    box-shadow 0.3s ease,
+    opacity 0.3s ease;
 }
 
-
-.ai-send-button:hover {
+.ai-send-button:hover:not(:disabled) {
   transform: scale(1.08);
 
-  background-color: var(--text-primary);
+  background: var(--text-primary);
 
   box-shadow:
     0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
+.ai-send-button:disabled {
+  opacity: 0.45;
 
-.ai-send-button:active {
-  transform: scale(0.95);
+  cursor: not-allowed;
 }
 
 
-/* =========================
-   CHAT SCROLLBAR
-========================= */
+/* =========================================================
+   SCROLLBAR
+========================================================= */
 
 .portfolio-ai-body::-webkit-scrollbar {
   width: 5px;
 }
 
-
 .portfolio-ai-body::-webkit-scrollbar-track {
   background: transparent;
 }
 
-
 .portfolio-ai-body::-webkit-scrollbar-thumb {
-  background-color: var(--accent-light);
+  background: var(--accent-light);
 
   border-radius: 10px;
 }
 
 
-.portfolio-ai-body::-webkit-scrollbar-thumb:hover {
-  background-color: var(--accent);
-}
-
-
-/* =========================
-   MESSAGE APPEAR ANIMATION
-========================= */
-
-.ai-message {
-  animation: messageAppear 0.3s ease-out both;
-}
-
-
-@keyframes messageAppear {
-
-  from {
-    opacity: 0;
-
-    transform: translateY(8px);
-  }
-
-  to {
-    opacity: 1;
-
-    transform: translateY(0);
-  }
-}
-
-
-/* =========================
+/* =========================================================
    MOBILE
-========================= */
+========================================================= */
 
 @media (max-width: 500px) {
 
   .portfolio-ai-button {
     right: 20px;
-
     bottom: 20px;
 
     width: 64px;
@@ -737,7 +867,6 @@
 
   .portfolio-ai-window {
     right: 12px;
-
     bottom: 12px;
 
     width: calc(100% - 24px);
@@ -759,8 +888,14 @@
   }
 
 
+  .lyra-header-wrapper {
+    width: 42px;
+    height: 42px;
+  }
+
+
   .portfolio-ai-body {
-    padding: 22px 16px;
+    padding: 22px 14px;
   }
 
 
@@ -770,86 +905,39 @@
   }
 
 
-  .ai-message {
-    max-width: 94%;
+  .lyra-welcome-wrapper {
+    width: 90px;
+    height: 90px;
   }
 
 
-  .message-bubble {
-    font-size: 12px;
-
-    padding: 10px 12px;
+  .chat-bubble {
+    max-width: 80%;
   }
 
 
   .portfolio-ai-input {
-    padding: 12px;
-  }
-
-
-  .portfolio-ai-input input {
-    font-size: 12px;
+    padding: 10px 12px;
   }
 
 }
 
 
-/* =========================
-   VERY SMALL SCREENS
-========================= */
-
-@media (max-width: 360px) {
-
-  .portfolio-ai-window {
-    right: 8px;
-
-    bottom: 8px;
-
-    width: calc(100% - 16px);
-
-    height: calc(100vh - 16px);
-  }
-
-
-  .portfolio-ai-button {
-    right: 15px;
-
-    bottom: 15px;
-  }
-
-}
-
-
-/* =========================
+/* =========================================================
    REDUCED MOTION
-========================= */
+========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
   .lyra-test-image,
   .lyra-header-image,
   .lyra-large-image,
-  .message-avatar,
-  .ai-pulse {
+  .ai-pulse,
+  .typing-bubble span {
     animation: none;
   }
-
 
   .portfolio-ai-window {
     animation: none;
   }
-
-
-  .ai-message {
-    animation: none;
-  }
-
-
-  .portfolio-ai-button,
-  .ai-suggestions button,
-  .ai-close-button,
-  .ai-send-button {
-    transition: none;
-  }
-
 }
