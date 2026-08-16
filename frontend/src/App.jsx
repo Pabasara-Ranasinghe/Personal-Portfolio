@@ -8,7 +8,6 @@ import Projects from './components/Projects/Projects'
 import Achievements from './components/Achievements/Achievements'
 import Education from './components/Education/Education'
 import Contact from './components/Contact/Contact'
-import PortfolioAI from './components/PortfolioAI/PortfolioAI'
 
 function App() {
   return (
@@ -28,8 +27,7 @@ function App() {
       <Education/>
 
       <Contact/>
-
-      <PortfolioAI />
+      
     </>
   )
 }
