@@ -1,13 +1,16 @@
 import useScrollReveal from '../../hooks/useScrollReveal'
+import { BsGithub } from "react-icons/bs";
+import { MdEmail } from 'react-icons/md'
 import './Contact.css'
 
 function Contact() {
-    const contactRef = useScrollReveal()
+  const contactRef = useScrollReveal()
+
   return (
     <section
-        className="contact scroll-reveal"
-        id="contact"
-        ref={contactRef}
+      className="contact scroll-reveal"
+      id="contact"
+      ref={contactRef}
     >
       <div className="contact-container">
 
@@ -29,17 +32,21 @@ function Contact() {
 
           <div className="contact-info">
 
+            {/* Email */}
             <div className="contact-item">
-              <span className="contact-icon">✉</span>
+              <span className="contact-icon">
+                <MdEmail />
+              </span>
 
               <div>
                 <span>Email</span>
-                <a href="mailto:your.email@example.com">
+                <a href="mailto:rpabasara216@gmail.com">
                   rpabasara216@gmail.com
                 </a>
               </div>
             </div>
 
+            {/* LinkedIn */}
             <div className="contact-item">
               <span className="contact-icon">in</span>
 
@@ -55,8 +62,11 @@ function Contact() {
               </div>
             </div>
 
+            {/* GitHub */}
             <div className="contact-item">
-              <span className="contact-icon">GH</span>
+              <span className="contact-icon">
+                <BsGithub />
+              </span>
 
               <div>
                 <span>GitHub</span>
@@ -72,6 +82,7 @@ function Contact() {
 
           </div>
 
+          {/* Contact Form */}
           <form className="contact-form">
 
             <div className="form-group">
