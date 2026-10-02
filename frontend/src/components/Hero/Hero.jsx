@@ -1,5 +1,5 @@
 import './Hero.css'
-import profileImage from '../../assets/images/profile.jpeg'
+import profileImage from '../../assets/images/profile2.jpeg'
 
 function Hero() {
   return (
