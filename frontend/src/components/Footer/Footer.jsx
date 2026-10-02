@@ -44,7 +44,7 @@ function Footer() {
             </a>
 
             <a
-              href="https://github.com/PabasaraRanasinghe216"
+              href="https://github.com/Pabasara-Ranasinghe"
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub"

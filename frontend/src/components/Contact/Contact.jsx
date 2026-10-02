@@ -71,7 +71,7 @@ function Contact() {
               <div>
                 <span>GitHub</span>
                 <a
-                  href="https://github.com/PabasaraRanasinghe216"
+                  href="https://github.com/Pabasara-Ranasinghe"
                   target="_blank"
                   rel="noreferrer"
                 >
