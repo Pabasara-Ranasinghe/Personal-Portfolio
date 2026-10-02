@@ -11,7 +11,7 @@ function Hero() {
 
           <h1>Pabasara Ranasinghe</h1>
 
-          <h2>Software Engineering Student & Developer</h2>
+          <h2>Software Engineering Undergraduate</h2>
 
           <p className="hero-description">
             I enjoy building modern, user-friendly and meaningful digital
@@ -41,8 +41,8 @@ function Hero() {
             </div>
 
             <div className="hero-card-content">
-              <span>SOFTWARE</span>
-              <strong>DEVELOPER</strong>
+              <span>SOFTWARE ENGINEERING</span>
+              <strong>UNDERGRADUATE</strong>
             </div>
 
           </div>

@@ -245,9 +245,9 @@ function Projects() {
               <h3>Medora</h3>
 
               <p>
-                A modern health guidance application designed to help
-                users understand their symptoms and receive accessible
-                health-related guidance through an intuitive interface.
+                An AI-powered health guidance application
+                designed to help users better understand 
+                their medical reports and health-related information. Medora combines AI-assisted explanations with a simple, intuitive interface to make complex medical information easier to understand and more accessible.
               </p>
 
               <div className="project-tech">
@@ -257,6 +257,7 @@ function Projects() {
                 <span>Spring Boot</span>
                 <span>MySQL</span>
                 <span>REST API</span>
+                <span>AI</span>
               </div>
 
             </div>

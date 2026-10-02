@@ -25,7 +25,7 @@ function About() {
 
           <div className="about-text">
             <p>
-              I'm Pabasara Ranasinghe, a Software Engineering student
+              I'm Pabasara Ranasinghe, a second year Software Engineering student
               who enjoys turning ideas into practical and engaging
               digital experiences.
             </p>
@@ -60,22 +60,22 @@ function About() {
             <div className="about-card">
               <span>02</span>
 
-              <h3>Curious</h3>
+              <h3>Adaptable</h3>
 
               <p>
-                I'm always exploring new technologies and learning
-                how they can be used to solve real-world problems.
+                I enjoy learning new technologies and adapting to
+                 different challenges throughout my development journey.
               </p>
             </div>
 
             <div className="about-card">
               <span>03</span>
 
-              <h3>Driven</h3>
+              <h3>Innovative</h3>
 
               <p>
-                I believe in continuous improvement and enjoy turning
-                challenges into opportunities to learn.
+                I enjoy turning ideas into practical digital solutions
+                 and finding creative ways to approach problems.
               </p>
             </div>
 

@@ -8,26 +8,32 @@ import Projects from './components/Projects/Projects'
 import Achievements from './components/Achievements/Achievements'
 import Education from './components/Education/Education'
 import Contact from './components/Contact/Contact'
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
     <>
       <Navbar />
 
-      <Hero />
+      <main>
+        <Hero />
 
-      <About />
+        <About />
 
-      <Skills/>
+        <Skills/>
 
-      <Projects/>
+        <Projects/>
 
-      <Achievements/>
+        <Achievements/>
 
-      <Education/>
+        <Education/>
 
-      <Contact/>
-      
+        <Contact/>
+
+      </main>
+
+      <Footer />
+
     </>
   )
 }

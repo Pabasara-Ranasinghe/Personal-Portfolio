@@ -28,13 +28,13 @@ function Education() {
 
         <div className="education-timeline">
 
-          {/* HND */}
+          {/* Certificate */}
 
           <div className="education-item">
 
             <div className="education-date">
-              <span>10/2025</span>
-              <span>10/2026</span>
+              <span>12/2023</span>
+              <span>04/2024</span>
             </div>
 
             <div className="education-line">
@@ -45,14 +45,10 @@ function Education() {
 
               <div className="education-card-top">
                 <span className="education-number">01</span>
-
-                <span className="education-status">
-                  Ongoing
-                </span>
               </div>
 
               <h3>
-                Higher National Diploma in Software Engineering
+                Certificate in Software Engineering
               </h3>
 
               <h4>
@@ -64,9 +60,9 @@ function Education() {
               </p>
 
               <p className="education-description">
-                Currently pursuing a Higher National Diploma in Software
-                Engineering with a focus on developing practical software
-                engineering knowledge and technical skills.
+                Completed a foundational program in Software Engineering,
+                establishing the initial knowledge and skills for further
+                studies in the field.
               </p>
 
             </div>
@@ -93,7 +89,7 @@ function Education() {
                 <span className="education-number">02</span>
 
                 <span className="education-gpa">
-                  GPA 3.8
+                  GPA 3.9
                 </span>
               </div>
 
@@ -120,13 +116,13 @@ function Education() {
           </div>
 
 
-          {/* Certificate */}
+          {/* Higher National Diploma */}
 
           <div className="education-item">
 
             <div className="education-date">
-              <span>12/2023</span>
-              <span>04/2024</span>
+              <span>10/2025</span>
+              <span>10/2026</span>
             </div>
 
             <div className="education-line">
@@ -137,10 +133,14 @@ function Education() {
 
               <div className="education-card-top">
                 <span className="education-number">03</span>
+
+                <span className="education-status">
+                  Ongoing
+                </span>
               </div>
 
               <h3>
-                Certificate in Software Engineering
+                Higher National Diploma in Software Engineering
               </h3>
 
               <h4>
@@ -152,9 +152,9 @@ function Education() {
               </p>
 
               <p className="education-description">
-                Completed a foundational program in Software Engineering,
-                establishing the initial knowledge and skills for further
-                studies in the field.
+                Currently pursuing a Higher National Diploma in Software
+                Engineering with a focus on developing practical software
+                engineering knowledge and technical skills.
               </p>
 
             </div>

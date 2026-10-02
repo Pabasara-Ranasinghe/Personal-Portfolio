@@ -79,6 +79,7 @@ function Skills() {
               <span>C#</span>
               <span>C</span>
               <span>PHP</span>
+              <span>JavaScript</span>
             </div>
           </div>
 
@@ -95,7 +96,7 @@ function Skills() {
             <div className="skill-tags">
               <span>UI Design</span>
               <span>UX</span>
-              <span>Figma</span>
+              <span>React</span>
               <span>Creative Design</span>
             </div>
           </div>
