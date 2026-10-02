@@ -52,10 +52,6 @@ An interactive timeline presents my academic journey, including my:
 * Diploma in Software Engineering
 * Certificate in Software Engineering
 
-### 💼 Experience
-
-A dedicated section showcasing relevant experience, learning opportunities, and professional development.
-
 ### 📩 Contact Section
 
 Visitors can find my contact information and submit project or collaboration inquiries through the contact form.
